@@ -1,0 +1,29 @@
+{
+  "name": "expresswithauth",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Um sistema completo de autenticação desenvolvido com foco em boas práticas, segurança e separação de camadas. Inclui cadastro com verificação por e-mail, login com senha criptografada, recuperação de senha, proteção de rotas e fluxo completo de validação de tokens. Criado como projeto de estudo para consolidar conhecimento em back-end.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anndrelipe/ExpressWithAuth.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anndrelipe/ExpressWithAuth/issues"
+  },
+  "homepage": "https://github.com/anndrelipe/ExpressWithAuth#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.11",
+    "pg": "^8.16.3",
+    "typeorm": "^0.3.27"
+  }
+}

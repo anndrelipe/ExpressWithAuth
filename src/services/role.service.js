@@ -8,7 +8,7 @@ export class RoleService {
     }
 
     create      = async (data) => {
-        return await thiis.roleRepository.create(data);
+        return await this.roleRepository.create(data);
     }
 
     findById      = async (id) => {
@@ -19,8 +19,8 @@ export class RoleService {
         return await this.roleRepository.updateById(id, data);
     }
 
-    removeById  = async (id) => {
-        return await this.roleRepository.removeById(id);
+    deleteById  = async (id) => {
+        return await this.roleRepository.deleteById(id);
     }
 
 }

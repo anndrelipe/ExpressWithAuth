@@ -37,8 +37,9 @@ O design do projeto é modular e pensado para facilitar a migração futura para
 ## Princípio de Bibliotecas e Ferramentas
 
 - Framework HTTP: Express  
-- DB / ORM: Mongoose (MongoDB) ou Sequelize / TypeORM (Postgres/MySQL)  
-- Hash de senha: bcrypt (ou argon2)  
+- DB: Postgres
+- ORM: Sequelize
+- Hash de senha: crypto 
 - JWT: jsonwebtoken  
 - Validação: Zod ou Joi  
 - Segurança HTTP: helmet e cors  

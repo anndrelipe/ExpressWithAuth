@@ -24,11 +24,15 @@ export const User = sequelize.define(
             allowNull: false,
             unique: true
         },
+        salt: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
+        },
         status: {
             type: DataTypes.ENUM,
             values: ["PENDING", "VALIDATED"],
             defaultValue: "PENDING",
-            allowNull: false
         },
         roleId: {
             type: DataTypes.INTEGER,
@@ -36,7 +40,7 @@ export const User = sequelize.define(
                 model: Role,
                 key: 'id'
             },
-            allowNull: false
+            defaultValue: 3
         }
     }
 );

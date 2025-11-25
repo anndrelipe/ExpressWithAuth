@@ -5,8 +5,9 @@ import { getRandomSalt } from "../utils/getRandomSalt.util.js";
 import { getHashedPassword } from "../utils/getHashedPassword.util.js";
 import { comparePassword } from "../utils/comparePassword.util.js";
 import { NotFoundError } from "../errors/NotFoundError.js";
+import { getToken } from "../utils/getToken.js";
 
-import jwt from "jsonwebtoken";
+import { ForbidenError } from "../errors/ForbidenError.js";
 
 export class UserService {
     constructor (userRepository) {
@@ -37,7 +38,12 @@ export class UserService {
             throw new NotFoundError("Something went wrong... The credentials provided do not match any existing user.");
         }
 
-        const token = jwt.sign({ id: user.id, status: user.status, roleId: user.roleId }, process.env.ADMIN_SECRET, { expiresIn: "1h" });
-        return { "token": token };
+        const token = await getToken(user.id, user.status, user.roleId);
+
+        // precisa validar?
+
+        return {
+            token: token
+        }
     }
 }

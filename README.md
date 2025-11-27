@@ -41,8 +41,8 @@ O design do projeto é modular e pensado para facilitar a migração futura para
 - ORM: Sequelize
 - Hash de senha: crypto 
 - JWT: jsonwebtoken  
-- Validação: Zod ou Joi  
-- Segurança HTTP: helmet e cors  
+- Validação: Joi  
+- Segurança HTTP: cors  
 - Rate limiting: express-rate-limit (ou soluções com Redis)  
 - E-mail: Nodemailer ou serviços externos (SendGrid, SES, Mailgun)  
 - Logs: Winston ou Pino  

@@ -39,7 +39,7 @@ export class UserService {
         }
 
         const token = await getToken(user.id, user.status, user.roleId);
-
+        
         // precisa validar?
 
         return {

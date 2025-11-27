@@ -8,7 +8,7 @@ export class UserController {
         try {
             const user = await this.userService.register(data);
             return res.status(201).json({
-                "message": "top menino, agora se loga pra testar",
+                "message": "Registered successfuly.",
                 "content": user
             });
         } catch (err) {
@@ -20,13 +20,12 @@ export class UserController {
         const data = req.body;
         try {
             const loggedIn = await this.userService.login(data);
-            return res.status(201).json({
-                "message": "raleu meu fi",
+            return res.status(200).json({
+                "message": `Welcome ${req.user.name}!`,
                 "content": loggedIn
             });
         } catch (err) {
             next(err);
         }
     }
-
 }

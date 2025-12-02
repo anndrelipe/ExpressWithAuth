@@ -15,7 +15,7 @@ export const Profile = sequelize.define(
             allowNull: false
         },
         birthday: {
-            type: DataTypes.DATE,
+            type: DataTypes.DATEONLY,
             allowNull: false
         },
         bio: {

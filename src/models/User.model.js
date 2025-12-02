@@ -35,8 +35,7 @@ export const User = sequelize.define(
             references: {
                 model: Role,
                 key: 'id'
-            },
-            defaultValue: 3
+            }
         }
     }
 );

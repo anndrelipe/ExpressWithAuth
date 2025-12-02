@@ -21,7 +21,7 @@ export class UserController {
         try {
             const loggedIn = await this.userService.login(data);
             return res.status(200).json({
-                "message": `Welcome ${req.user.name}!`,
+                "message": `Welcome`,
                 "content": loggedIn
             });
         } catch (err) {

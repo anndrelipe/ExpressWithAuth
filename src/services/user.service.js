@@ -7,8 +7,6 @@ import { comparePassword } from "../utils/comparePassword.util.js";
 import { NotFoundError } from "../errors/NotFoundError.js";
 import { getToken } from "../utils/getToken.js";
 
-import { ForbidenError } from "../errors/ForbidenError.js";
-
 export class UserService {
     constructor (userRepository) {
         this.userRepository = userRepository;
@@ -20,10 +18,10 @@ export class UserService {
         const hashedPassword = await getHashedPassword(password, salt);
 
         const user = {
-            "name": name,
             "email": email,
             "password": hashedPassword,
-            "salt": salt
+            "salt": salt,
+            "roleId": 1
         }
 
         return await this.userRepository.register(user);

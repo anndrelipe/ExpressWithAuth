@@ -13,7 +13,7 @@ export class UserService {
     }
 
     register = async (data) => {
-        const { name, email, password } = data;
+        const { email, password } = data;
         const salt = await getRandomSalt();
         const hashedPassword = await getHashedPassword(password, salt);
 
@@ -37,11 +37,22 @@ export class UserService {
         }
 
         const token = await getToken(user.id, user.status, user.roleId);
-        
-        // precisa validar?
 
         return {
             token: token
         }
     }
+
+    getUser = async (id) => {
+        return await this.userRepository.getUser(id);
+    }
+
+    updateUser = async (data, id) => {
+        return await this.userRepository.updateUser(data, id);
+    }
+
+    deleteUser = async (id) => {
+        return await this.userRepository.deleteUser(id)
+    }
+
 }

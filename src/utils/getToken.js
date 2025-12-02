@@ -8,5 +8,5 @@ export const getToken = async (id, status, roleId) => {
         id: id, 
         status: status, 
         roleId: roleId 
-    }, process.env.USER_SECRET, { expiresIn: "1h" });
+    }, process.env.JWT_SECRET, { expiresIn: "1h" });
 }

@@ -18,7 +18,7 @@ export const authHandle = (req, res, next) => {
         next(new ForbidenError("Forbiden error... No token was found."));
     }
 
-    jwt.verify(token, process.env.USER_SECRET, (err, data) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, data) => {
         if (err) {
             next(new ForbidenError("Forbiden error... Invalid token."));
         }

@@ -20,6 +20,7 @@ const adminSeed = async () => {
         await User.create({
             email: process.env.ADMIN_EMAIL,
             password: password,
+            status: "VALIDATED",
             salt: salt,
             roleId: 3
         });

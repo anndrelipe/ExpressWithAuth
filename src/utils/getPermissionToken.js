@@ -3,7 +3,7 @@ dotenv.config();
 
 import jwt from "jsonwebtoken"
 
-export const getToken = async (id, status, roleId) => {
+export const getPermissionToken = async (id, status, roleId) => {
     return jwt.sign({ 
         id: id, 
         status: status, 

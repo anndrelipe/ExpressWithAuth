@@ -22,7 +22,9 @@ const adminSeed = async () => {
             password: password,
             status: "VALIDATED",
             salt: salt,
-            roleId: 3
+            roleId: 3,
+            emailConfimationToken: "ADMINDONTNEEDCONFIRMATIONTOKEN",
+            emailConfimationAt: new Date()
         });
 
         console.log("ADMIN Has just been created.");

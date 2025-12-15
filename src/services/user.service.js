@@ -14,8 +14,11 @@ export class UserService {
 
     register = async (data) => {
         const { email, password } = data;
+
         const salt = await getRandomSalt();
         const hashedPassword = await getHashedPassword(password, salt);
+
+        const confToken = getToken()
 
         const user = {
             "email": email,

@@ -30,6 +30,15 @@ export const User = sequelize.define(
             values: ["PENDING", "VALIDATED"],
             defaultValue: "PENDING",
         },
+        emailConfimationToken: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
+        },
+        emailConfimationAt: {
+            type: DataTypes.DATE,
+            allowNull: true
+        },
         roleId: {
             type: DataTypes.INTEGER,
             references: {

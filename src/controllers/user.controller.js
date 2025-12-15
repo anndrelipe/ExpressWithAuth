@@ -9,11 +9,7 @@ export class UserController {
         const data = req.body;
         try {
             const user = await this.userService.register(data);
-            const info = await sendEmail({
-                
-            });
-
-            console.log(info);
+            
             return res.status(201).json({
                 "message": "Registered successfuly.",
                 "content": user

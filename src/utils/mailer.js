@@ -13,6 +13,8 @@ const transporter = nodemailer.createTransport({
 });
 
 export const sendEmail = async ({ to, subject, html }) => {
+    console.log('📨 sendEmail chamado:', { to, subject });
+    
     const info = await transporter.sendMail({
         from: "ExpressWithAuth <no-reply@teste.com>",
         to: to,
